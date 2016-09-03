@@ -1,0 +1,68 @@
+题目1  Image Encryption
+
+时间限制10000ms
+单点时限1000ms
+内存限制256MB
+
+描述
+A fancy square image encryption algorithm works as follow
+
+0. consider the image as an N x N matrix
+
+1. choose an integer k∈ {0, 1, 2, 3}
+
+2. rotate the square image k  90 degree clockwise
+
+3. if N is odd stop the encryption process
+
+4. if N is even split the image into four equal sub-squares whose length is N/2 and encrypt them recursively starting from step 0
+
+Apparently different choices of the k serie result in different encrypted images. Given two images A and B, your task is to find out whether it is POSSIBLE that B is encrypted from A. B is possibly encrypted from A if there is a choice of k serie that encrypt A into B.
+
+输入
+Input may contains multiple testcases.
+
+The first line of the input contains an integer T(1 = T = 10) which is the number of testcases.
+
+The first line of each testcase is an integer N, the length of the side of the images A and B.
+
+The following N lines each contain N integers, indicating the image A.
+
+The next following N lines each contain N integers, indicating the image B.
+
+For 20% of the data, 1 = n = 15
+
+For 100% of the data, 1 = n = 100, 0 = Aij, Bij = 100000000
+
+输出
+For each testcase output Yes or No according to whether it is possible that B is encrypted from A.
+
+样例输入
+3
+2
+1 2
+3 4
+3 1
+4 2
+2
+1 2
+4 3
+3 1
+4 2
+4
+4 1 2 3
+1 2 3 4
+2 3 4 1
+3 4 1 2
+3 4 4 1
+2 3 1 2
+1 4 4 3
+2 1 3 2
+样例输出
+Yes
+No
+Yes
+
+总结：
+1.输入输出要弄好啊！
+2.旋转的过程中其实等效的，可以能不旋转尽量不旋转。
